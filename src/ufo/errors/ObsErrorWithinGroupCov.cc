@@ -9,6 +9,7 @@
 
 #include <math.h>
 #include <vector>
+#include <stdexcept>
 
 #include "ioda/Engines/EngineUtils.h"
 #include "ioda/Engines/HH.h"
@@ -176,6 +177,18 @@ void ObsErrorWithinGroupCov::inverseMultiply(ioda::ObsVector & dy) const {
 
   // D^{-1/2} * C^{-1} * D^{-1/2} * dy
   dy /= stddev_;
+}
+
+// -----------------------------------------------------------------------------
+
+void ObsErrorWithinGroupCov::sqrtMultiply(ioda::ObsVector & dy) const {
+  std::runtime_error("ioda::ObsErrorWithinGroupCov::sqrtMultiply(ioda::ObsVector & dy) has not been implemeneted.");
+}
+
+// -----------------------------------------------------------------------------
+
+void ObsErrorWithinGroupCov::invSqrtMultiply(ioda::ObsVector & dy) const {
+  std::runtime_error("ioda::ObsErrorWithinGroupCov::invSqrtMultiply(ioda::ObsVector & dy) has not been implemeneted.");
 }
 
 // -----------------------------------------------------------------------------

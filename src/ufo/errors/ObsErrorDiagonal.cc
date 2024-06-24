@@ -11,6 +11,8 @@
 
 #include "oops/util/Logger.h"
 
+#include <stdexcept>
+
 
 namespace ufo {
 
@@ -48,6 +50,18 @@ void ObsErrorDiagonal::multiply(ioda::ObsVector & dy) const {
 
 void ObsErrorDiagonal::inverseMultiply(ioda::ObsVector & dy) const {
   dy *= inverseVariance_;
+}
+
+// -----------------------------------------------------------------------------
+
+void ObsErrorDiagonal::sqrtMultiply(ioda::ObsVector & dy) const {
+  std::runtime_error("ioda::ObsErrorDiagonal::sqrtMultiply(ioda::ObsVector & dy) has not been implemeneted.");
+}
+
+// -----------------------------------------------------------------------------
+
+void ObsErrorDiagonal::invSqrtMultiply(ioda::ObsVector & dy) const {
+  std::runtime_error("ioda::ObsErrorDiagonal::invSqrtMultiply(ioda::ObsVector & dy) has not been implemeneted.");
 }
 
 // -----------------------------------------------------------------------------

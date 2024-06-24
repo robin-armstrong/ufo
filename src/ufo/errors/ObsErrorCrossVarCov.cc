@@ -11,6 +11,7 @@
 #include <math.h>
 #include <string>
 #include <vector>
+#include <stdexcept>
 
 #include "ioda/Engines/EngineUtils.h"
 #include "ioda/Engines/HH.h"
@@ -422,6 +423,18 @@ void ObsErrorCrossVarCov::inverseMultiply(ioda::ObsVector & dy) const {
 
   // D^{-1/2} * C^{-1} * D^{-1/2} * dy
   dy /= stddev_;
+}
+
+// -----------------------------------------------------------------------------
+
+void ObsErrorCrossVarCov::sqrtMultiply(ioda::ObsVector & dy) const {
+  std::runtime_error("ioda::ObsErrorCrossVarCov::sqrtMultiply(ioda::ObsVector & dy) has not been implemeneted.");
+}
+
+// -----------------------------------------------------------------------------
+
+void ObsErrorCrossVarCov::invSqrtMultiply(ioda::ObsVector & dy) const {
+  std::runtime_error("ioda::ObsErrorCrossVarCov::invSqrtMultiply(ioda::ObsVector & dy) has not been implemeneted.");
 }
 
 // -----------------------------------------------------------------------------
