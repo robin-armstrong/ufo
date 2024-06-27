@@ -55,13 +55,13 @@ void ObsErrorDiagonal::inverseMultiply(ioda::ObsVector & dy) const {
 // -----------------------------------------------------------------------------
 
 void ObsErrorDiagonal::sqrtMultiply(ioda::ObsVector & dy) const {
-  std::runtime_error("ioda::ObsErrorDiagonal::sqrtMultiply(ioda::ObsVector & dy) has not been implemeneted.");
+  dy *= stddev_;
 }
 
 // -----------------------------------------------------------------------------
 
 void ObsErrorDiagonal::invSqrtMultiply(ioda::ObsVector & dy) const {
-  std::runtime_error("ioda::ObsErrorDiagonal::invSqrtMultiply(ioda::ObsVector & dy) has not been implemeneted.");
+  dy /= stddev_;
 }
 
 // -----------------------------------------------------------------------------
